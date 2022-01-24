@@ -218,7 +218,7 @@ uadk_compress_pmd_xform_create(struct rte_compressdev *dev __rte_unused,
 		case RTE_COMP_ALGO_NULL:
 			break;
 		case RTE_COMP_ALGO_DEFLATE:
-			setup.alg_type = WD_DEFLATE;
+			setup.alg_type = WD_ZLIB;
 			setup.win_sz = WD_COMP_WS_8K;
 			setup.comp_lv = WD_COMP_L8;
 			setup.op_type = WD_DIR_COMPRESS;
@@ -235,7 +235,7 @@ uadk_compress_pmd_xform_create(struct rte_compressdev *dev __rte_unused,
 		case RTE_COMP_ALGO_NULL:
 			break;
 		case RTE_COMP_ALGO_DEFLATE:
-			setup.alg_type = WD_DEFLATE;
+			setup.alg_type = WD_ZLIB;
 			setup.comp_lv = WD_COMP_L8;
 			setup.op_type = WD_DIR_DECOMPRESS;
 			param.type = setup.op_type;
@@ -386,7 +386,7 @@ uadk_compress_probe(struct rte_vdev_device *vdev)
 	struct uacce_dev *udev;
 	const char *name;
 
-	udev = wd_get_accel_dev("deflate");
+	udev = wd_get_accel_dev("zlib");
 	if (!udev)
 		return -ENODEV;
 
