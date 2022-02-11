@@ -88,6 +88,9 @@ Test steps
 	$ mount -t hugetlbfs none /mnt/huge_2mb -o pagesize=2MB
 
 	5. Run test app
+	$ sudo dpdk-test --vdev=crypto_uadk --log-level=6
+	  RTE>>cryptodev_uadk_autotest
+	  RTE>>quit
 
 
 [1] https://github.com/Linaro/uadk
