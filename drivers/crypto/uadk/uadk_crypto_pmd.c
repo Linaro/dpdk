@@ -558,17 +558,23 @@ uadk_set_session_cipher_parameters(struct rte_cryptodev *dev,
 	sess->handle_cipher = wd_cipher_alloc_sess(&setup);
 	if (!sess->handle_cipher) {
 		UADK_LOG(ERR, "uadk failed to alloc session!\n");
-		return -EINVAL;
+		ret = -EINVAL;
+		goto env_uninit;
 	}
 
 	ret = wd_cipher_set_key(sess->handle_cipher, cipher->key.data, cipher->key.length);
 	if (ret) {
 		wd_cipher_free_sess(sess->handle_cipher);
 		UADK_LOG(ERR, "uadk failed to set key!\n");
-		return -EINVAL;
+		ret = -EINVAL;
+		goto env_uninit;
 	}
 
 	return 0;
+env_uninit:
+	wd_cipher_env_uninit();
+	priv->env_cipher_init = false;
+	return ret;
 }
 
 /* Set session auth parameters */
@@ -627,7 +633,8 @@ uadk_set_session_auth_parameters(struct rte_cryptodev *dev,
 		sess->auth.req.out_bytes = 64;
 		break;
 	default:
-		return -ENOTSUP;
+		ret = -ENOTSUP;
+		goto env_uninit;
 	}
 
 	params.numa_id = priv->udev->numa_id;
@@ -635,10 +642,15 @@ uadk_set_session_auth_parameters(struct rte_cryptodev *dev,
 	sess->handle_digest = wd_digest_alloc_sess(&setup);
 	if (!sess->handle_digest) {
 		UADK_LOG(ERR, "uadk failed to alloc session!\n");
-		return -EINVAL;
+		ret = -EINVAL;
+		goto env_uninit;
 	}
 
 	return 0;
+env_uninit:
+	wd_digest_env_uninit();
+	priv->env_auth_init = false;
+	return ret;
 }
 
 static int
