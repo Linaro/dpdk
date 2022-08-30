@@ -67,4 +67,10 @@ Dependency
 
 UADK crypto PMD relies on UADK library [1]
 
+UADK is a framework for user applications to access hardware accelerators.
+UADK relies on IOMMU SVA (Shared Virtual Address) feature, which share
+the same page table between IOMMU and MMU.
+As a result, user application can directly use virtual address for device dma,
+which enhances the performance as well as easy usability.
+
 [1] https://github.com/Linaro/uadk

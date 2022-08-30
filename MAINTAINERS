@@ -1059,6 +1059,12 @@ M: Fan Zhang <roy.fan.zhang@intel.com>
 F: drivers/crypto/scheduler/
 F: doc/guides/cryptodevs/scheduler.rst
 
+HiSilicon UADK crypto
+M: Zhangfei Gao <zhangfei.gao@linaro.org>
+F: drivers/crypto/uadk/
+F: doc/guides/cryptodevs/uadk.rst
+F: doc/guides/cryptodevs/features/uadk.ini
+
 Intel QuickAssist
 M: Fan Zhang <roy.fan.zhang@intel.com>
 F: drivers/crypto/qat/
@@ -1161,6 +1167,12 @@ M: Ashish Gupta <ashish.gupta@marvell.com>
 F: drivers/compress/octeontx/
 F: doc/guides/compressdevs/octeontx.rst
 F: doc/guides/compressdevs/features/octeontx.ini
+
+HiSilicon UADK
+M: Zhangfei Gao <zhangfei.gao@linaro.org>
+F: drivers/compress/uadk/
+F: doc/guides/compressdevs/uadk.rst
+F: doc/guides/compressdevs/features/uadk.ini
 
 Intel QuickAssist
 M: Fan Zhang <roy.fan.zhang@intel.com>
