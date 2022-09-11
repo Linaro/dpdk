@@ -197,6 +197,12 @@ New Features
   integrated on SPR-EE.  See the
   :doc:`../bbdevs/acc200` BBDEV guide for more details on this new driver.
 
+* **Added UADK crypto driver.**
+
+  Added a new ``UADK`` crypto driver for the UADK library
+  See the
+  :doc:`../cryptodevs/uadk.rst` UADK guide for more details on this new driver.
+
 * **Added eventdev adapter instance get API.**
 
   * Added ``rte_event_eth_rx_adapter_instance_get`` to get Rx adapter
