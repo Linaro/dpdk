@@ -182,6 +182,8 @@ New Features
 * **Updated aesni_mb crypto driver.**
 
   * Added support for 8-byte and 16-byte tags for ZUC-EIA3-256.
+  * Added support for inplace SGL, out of place SGL in SGL out,
+    out of place LB in SGL out, and out of place SGL in LB out.
 
 * **Added bbdev operation for FFT processing.**
 
