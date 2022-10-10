@@ -236,6 +236,11 @@ New Features
 
      strings $dpdk_binary_or_driver | sed -n 's/^PMD_INFO_STRING= //p'
 
+* **Updated ipsec-secgw sample application.**
+
+  Added support for lookaside sessions in event mode.
+  See the :doc:`../sample_app_ug/ipsec_secgw` for more details.
+
 
 Removed Items
 -------------
