@@ -243,6 +243,11 @@ New Features
   Added support for lookaside sessions in event mode.
   See the :doc:`../sample_app_ug/ipsec_secgw` for more details.
 
+* **Updated fips_validation sample application.**
+
+  Added support for asymmetric crypto algorithms.
+  See the :doc:`../sample_app_ug/fips_validation` for more details.
+
 
 Removed Items
 -------------
