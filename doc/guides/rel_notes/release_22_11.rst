@@ -254,6 +254,12 @@ New Features
   Added support for asymmetric crypto algorithms.
   See the :doc:`../sample_app_ug/fips_validation` for more details.
 
+* **Updated bbdev test application.**
+
+  Added support for bbdev level unit test for the FFT operations and
+  for Soft-Output options.
+  Also added 2 small test vectors for the FFT operation.
+
 
 Removed Items
 -------------
