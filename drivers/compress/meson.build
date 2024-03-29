@@ -11,6 +11,7 @@ drivers = [
         'nitrox',
         'octeontx',
         'zlib',
+        'uadk',
 ]
 
 std_deps = ['compressdev'] # compressdev pulls in all other needed deps
